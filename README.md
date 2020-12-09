@@ -4,4 +4,20 @@ This is my firts project using typescript with React and Redux. It's a simple ap
 
 There will be future features in the app.
 
-To run the application just go to the client folder, commant npm i then npm start.
+
+## Available Scripts
+
+In the project client directory, you can run: 
+
+### `npm install` 
+
+      then
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+
+
