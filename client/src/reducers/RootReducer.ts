@@ -1,7 +1,7 @@
 import {combineReducers} from "redux";
 import pokemonReducer from "./PokemonReducer";
 
-//                                     reducers: {}
+//                                     reducers: {
 const RootReducer = combineReducers({
     pokemon: pokemonReducer
 });

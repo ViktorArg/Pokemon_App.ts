@@ -1,24 +1,28 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import {RootStore} from "./Store";
 import {GetPokemon} from "./actions/PokemonActions";
+import {SearchInput} from "./components/SearchInput";
 
 function App() {
   const dispatch = useDispatch();
-  const [pokemonName, setPokemonName] = useState("charizard");
   //                              selector: (state : DefaultRootState)
   const pokemonState = useSelector((state: RootStore) => state.pokemon);
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setPokemonName(event.target.value)
-  const handleSubmit = () => dispatch(GetPokemon(pokemonName));
+    
+  const handleSubmit = (pokemonState:string) => {
+    if (pokemonState == "") {
+      dispatch(GetPokemon("charizard"));
+    } else {
+      dispatch(GetPokemon(pokemonState));
+    }
+  }
   
   console.log("pokemon state:", pokemonState);
 
   return (
     <div className="App">
-      <input type="text" onChange={handleChange} placeholder="Pokemon Name"/>
-      <button onClick={handleSubmit}>Search</button>
+      <SearchInput newPokemonName={handleSubmit}/>
         {pokemonState.pokemon && (
           <div>
             <img src={pokemonState.pokemon.sprites.front_default} alt="" />
