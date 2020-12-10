@@ -7,7 +7,7 @@ There will be future features in the app.
 
 ## Available Scripts
 
-In the project client directory, you can run: 
+To run the project go to client directory and write the commands.
 
 ### `npm install` 
 
